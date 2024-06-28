@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import CardArticle from '@/asset/card/CardArticle'
 
 // const articles = [
 //   { id: 1, title: 'First Article', summary: 'Summary of the first article.' },
@@ -34,10 +35,10 @@ export default function Articles() {
   }, []);
 
   return (
-    <div className='container mx-auto py-8 px-4 md:px-0'>
+    <div className='container mx-auto pb-8 md:px-0 lg:px-40'>
       <h1 className='text-4xl font-bold mb-8'>Articles</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {article.map(article => (
+        {/* {article.map(article => (
           <div key={article.id} className='border rounded-lg p-4 shadow-md'>
             <h2 className='text-2xl font-bold mb-2'>{article.judul}</h2>
             <p className='text-gray-600 mb-4'>{article.konten}</p>
@@ -45,7 +46,14 @@ export default function Articles() {
             <div className='text-blue-600 hover:underline cursor-pointer'>Read More</div>
             </Link>
           </div>
-        ))}
+        ))} */}
+        {article.length > 0 ? (
+          article.map((item) => (
+            <CardArticle key={item.id} item={item}/>
+          ))
+        ) : (
+          <p>No data available</p>
+        )}
       </div>
     </div>
   );

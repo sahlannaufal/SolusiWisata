@@ -33,8 +33,8 @@ export default function Articles() {
     }, []);
 
   return (
-    <div className='container mx-auto py-8 px-4 md:px-0'>
-      <h1 className='text-4xl font-bold mb-8'>Armada</h1>
+    <div className='container mx-auto pb-8 md:px-0 lg:px-40'>
+      <h1 className='text-4xl text-center font-bold mb-8'>Armada</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {armada.length > 0 ? (
           armada.map((item) => (

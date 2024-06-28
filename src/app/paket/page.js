@@ -13,7 +13,7 @@ const [paket, setPaket] = useState([]);
       console.log('responses status:', response.status);
 
       if (!response.ok) {
-        throw new Error('Network response wa not ok');
+        throw new Error('Network response was not ok');
       }
       const data = await response.json();
       console.log('Data fetched from API:', data.data.paketPerjalanan);
@@ -30,9 +30,10 @@ const [paket, setPaket] = useState([]);
   }, []);
 
   return (
-    <div className='container mx-auto py-8 px-4 md:px-0'>
-      <h1 className='text-4xl font-bold mb-8'>Armada</h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+    <>
+    <div className='md:px-0 lg:px-40 mb-16'>
+      <h1 className='text-4xl text-center font-bold mb-8'>Paket Tour</h1>
+      <div className='content-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center'>
       {paket.length > 0 ? (
           paket.map((item) => (
             <Card key={item.id} item={item}/>
@@ -42,5 +43,6 @@ const [paket, setPaket] = useState([]);
         )}
       </div>
     </div>
+    </>
   );
 }
