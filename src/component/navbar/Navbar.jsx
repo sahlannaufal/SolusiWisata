@@ -17,7 +17,7 @@ function Navbar() {
     </div>
     <div className='flex align-middle space-x-6 m-8 '>
       <NavButton nama="Home" href="/" />
-      <NavButton nama="Paket Tour" href="/paketTour" />
+      <NavButton nama="Paket Tour" href="/paket" />
       <NavButton nama="Armada" href="/armada" />
       <NavButton nama="Gallery" href="/gallery" />
       <NavButton nama="Articles" href="/article" />
