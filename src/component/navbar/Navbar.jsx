@@ -1,8 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 
-const NavButton = ({nama}) => {
+const NavButton = ({nama, href}) => {
   return (
-    <a className='flex align-middle p-2' href="/">{nama}</a>
+    <Link href={href} className='flex align-middle p-2'>
+    {nama}
+    </Link>
   )
 }
 
@@ -13,10 +16,11 @@ function Navbar() {
       <img className='flex h-20' src="/logo_solusi.png" alt="logo"/>
     </div>
     <div className='flex align-middle space-x-6 m-8 '>
-      <NavButton nama="Home" />
-      <NavButton nama="Paket Tour" />
-      <NavButton nama="Armada" />
-      <NavButton nama="Gallery" />
+      <NavButton nama="Home" href="/" />
+      <NavButton nama="Paket Tour" href="/paketTour" />
+      <NavButton nama="Armada" href="/armada" />
+      <NavButton nama="Gallery" href="/gallery" />
+      <NavButton nama="Articles" href="/article" />
     </div>
     </div>
   ) 
