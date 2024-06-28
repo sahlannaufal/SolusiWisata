@@ -17,7 +17,7 @@ function CardArmada({item}) {
                 </div>
                 <div className='flex justify-end'>
                   <div className=''>
-                  <ButtonPesanSekarang nama="Pesan Armada" />
+                  <ButtonPesanSekarang nama="Pesan Armada" url="https://wa.me/6282285639035"/>
                   </div>
                 </div>
               </div>

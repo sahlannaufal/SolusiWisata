@@ -1,4 +1,5 @@
 'use client'
+import CardArmada from '@/asset/card/CardArmada';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -35,15 +36,13 @@ export default function Articles() {
     <div className='container mx-auto py-8 px-4 md:px-0'>
       <h1 className='text-4xl font-bold mb-8'>Armada</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {armada.map(armada => (
-          <div key={armada.id} className='border rounded-lg p-4 shadow-md'>
-            <h2 className='text-2xl font-bold mb-2'>{armada.merk} ({armada.jenis})</h2>
-            <p className='text-gray-600 mb-4'>{armada.harga}</p>
-            <Link href={`/armada/${armada.id}`}>
-            <div className='text-blue-600 hover:underline cursor-pointer'>Read More</div>
-            </Link>
-          </div>
-        ))}
+      {armada.length > 0 ? (
+          armada.map((item) => (
+            <CardArmada key={item.id} item={item} />
+          ))
+        ) : (
+          <p>No data available</p>
+        )}
       </div>
     </div>
   );

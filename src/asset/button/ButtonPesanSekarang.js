@@ -1,8 +1,11 @@
 import React from 'react'
 
-function ButtonPesanSekarang({nama}) {
+function ButtonPesanSekarang({nama, url}) {
+  const handleClick = () => {
+    window.location.href = url;
+  };
   return (
-          <button className='bg-blue-700 text-white px-4 py-3 rounded-3xl text-sm' href="/">{nama}</button>
+          <button className='bg-blue-700 text-white px-4 py-3 rounded-3xl text-sm' onClick={handleClick}>{nama}</button>
   )
 }
 
