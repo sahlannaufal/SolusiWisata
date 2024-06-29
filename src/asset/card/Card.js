@@ -1,5 +1,6 @@
 import React from 'react'
 import ButtonPesanSekarang from '../button/ButtonPesanSekarang'
+import Link from 'next/link'
 
 ButtonPesanSekarang
 function Card({item}) {
@@ -12,7 +13,7 @@ function Card({item}) {
           <div className='space-y-1'>
             <p className='font-bold text-xl leading-tight'>{item.destinasi}</p>
             <p className='text-base text-gray-600'>{item.waktu}</p>
-            <p className='font-medium text-base text-blue-700'>Read More</p>
+            <Link href={`/paket/${item.id}`} className='font-medium text-base text-blue-700'>Read More</Link>
           </div>
           <div className='flex content-center justify-between'>
             <div className='space-y-1'>
