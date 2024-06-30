@@ -1,7 +1,5 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import axios from 'axios';
-
 
 export const authOptions = {
   providers: [
@@ -25,8 +23,15 @@ export const authOptions = {
                 throw new Error('Network response was not ok');
             }
     
-            const user = await response.json();
-            return user; // Assuming the endpoint returns user data on successful login
+            const data = await response.json();
+            const user = data?.data?.user;
+            const token = data?.data?.token;
+
+            console.log(user);
+            return {
+              ...user,
+              ...token,
+            }; // Assuming the endpoint returns user data on successful login
         } catch (error) {
             console.error('Error during authorization:', error);
             return null;
@@ -38,6 +43,22 @@ export const authOptions = {
   session: {
     strategy: 'jwt',
   },
+  callbacks: {
+    jwt({token, user}) {
+    if(!user) return token
+
+      return {
+      ...token,
+      id: user.id
+    }
+  },
+  session({session, token}) {
+    return {
+      ...session,
+      id: token.id
+    }
+  },
+},
 };
 
 const handler = NextAuth(authOptions);
