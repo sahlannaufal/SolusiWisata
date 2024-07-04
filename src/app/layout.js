@@ -1,26 +1,19 @@
-import Navbar from '@/component/navbar/Navbar'
-import Footer from '@/component/footer/Footer'
 import 'tailwindcss/tailwind.css';
+import Providers from '@/utils/Provider';
 
 
 export const metadata = {
-  title: 'Blog App',
-  description: 'The best blog app!',
+  title: 'Solusi Wisata',
+  description: 'Solusi Perjalanan Anda',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className=''>
-        <div className=''>
-          <div className=' '>
-          <Navbar />
-          <div className=''>
-          {children }
-          <Footer />
-          </div>
-          </div>
-          </div>
+        <Providers>
+          {children}
+        </Providers>
         </body>
     </html>
   )
