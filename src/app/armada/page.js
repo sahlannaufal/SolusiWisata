@@ -1,5 +1,6 @@
 'use client'
 import CardArmada from '@/asset/card/CardArmada';
+import Navbar from '@/component/navbar/Navbar';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -33,6 +34,8 @@ export default function Articles() {
     }, []);
 
   return (
+    <>
+    <Navbar />
     <div className='container mx-auto pb-8 md:px-0 lg:px-40'>
       <h1 className='text-4xl text-center font-bold mb-8'>Armada</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -45,5 +48,6 @@ export default function Articles() {
         )}
       </div>
     </div>
+    </>
   );
 }

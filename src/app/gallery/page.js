@@ -1,5 +1,6 @@
 'use client'
 import CardGallery from '@/asset/card/CardGallery'
+import Navbar from '@/component/navbar/Navbar';
 import { useEffect, useState } from 'react';
 // const images = [
 //   '/foto1.jpg',
@@ -36,6 +37,7 @@ export default function Gallery() {
 
   return (
     <div>
+      <Navbar />
       <div className='container mx-auto pb-8 md:px-0 lg:px-40'>
         <h1 className='text-4xl font-bold mb-8 text-center'>Gallery</h1>
         <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import ArticleForm from '@/component/article/ArticleForm';
+import ArmadaForm from '@/component/armada/ArmadaForm';
 
 const AdminPage = async () => {
 
@@ -8,9 +9,9 @@ const AdminPage = async () => {
   return (
     <section>
       <div className='container'>
-        <h2> you are logged in as:</h2>
       </div>
       <ArticleForm/>
+      <ArmadaForm/>
     </section>
   )
 }

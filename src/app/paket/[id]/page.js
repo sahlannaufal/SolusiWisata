@@ -1,4 +1,5 @@
 'use client';
+import Navbar from '@/component/navbar/Navbar';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
@@ -42,6 +43,8 @@ const [paket, setPaket] = useState([]);
   }
 
   return (
+    <>
+    <Navbar />
     <div className='container mx-auto py-8 px-4 md:px-0'>
       <div className='max-w-3xl mx-auto'>
         <header className='mb-8'>
@@ -58,5 +61,6 @@ const [paket, setPaket] = useState([]);
         </article>
       </div>
     </div>
+    </>
   );
 }
