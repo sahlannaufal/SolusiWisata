@@ -74,6 +74,7 @@ function Navbar() {
         <NavButton nama="Home" href="/" />
         <NavButton nama="Paket Tour" href="/paket" />
         <NavButton nama="Armada" href="/armada" />
+        <NavButton nama="Article" href="/article" />
         <NavButton nama="Gallery" href="/gallery" />
         {isLogin ? <ItemNavbarAuth pathname={pathname} /> : <ItemNavbarGuest pathname={pathname} isLogin={isLogin} />}
 

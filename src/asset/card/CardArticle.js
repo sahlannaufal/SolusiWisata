@@ -13,10 +13,6 @@ function Card({ item }) {
           <p className='text-base text-gray-600'>{item.konten}</p>
           <Link href={`/article/${item.id}`} className='font-medium text-base text-blue-700'>Read More</Link>
         </div>
-        {/* Jika Anda ingin menambahkan elemen di bagian bawah card */}
-        {/* <div className='flex content-center justify-between'>
-          Konten tambahan di sini
-        </div> */}
       </div>
     </div>
   );

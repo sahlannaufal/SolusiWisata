@@ -20,7 +20,7 @@ function Card({ item }) {
             <p><span className='font-bold'>{item.harga}</span><span className='text-sm'>/Orang</span></p>
           </div>
           <div>
-            <ButtonPesanSekarang nama="Pesan Sekarang" />
+            <ButtonPesanSekarang nama="Pesan Sekarang" url="https://wa.me/6282285639035"/>
           </div>
         </div>
       </div>

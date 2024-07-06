@@ -36,10 +36,11 @@ export const useGetArticle = () => {
     if(isError) {
         HandleNotifError(error)
     }
-    if (data && data.data[0]) {
-        data = data.data[0]
-    } else {
-        data = null
-    } 
-    return [data, isLoadingArticle]
+    const articleData = data?.data?.article ?? [];
+    // if (data && data.data[0]) {
+    //     data = data.data[0]
+    // } else {
+    //     data = null
+    // } 
+    return [articleData, isLoadingArticle]
 }

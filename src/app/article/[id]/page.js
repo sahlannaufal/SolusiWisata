@@ -1,41 +1,13 @@
 'use client';
 import Navbar from '@/component/navbar/Navbar';
+import { useGetArticle } from '@/hooks/ArticleHooks';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
-// const articles = [
-//   { id: 1, title: 'First Article', content: 'Full content of the first article.' },
-//   { id: 2, title: 'Second Article', content: 'Full content of the second article.' },
-//   // Tambahkan artikel lainnya sesuai kebutuhan
-// ];
-
 export default function Article() {
-  const [articles, setArticles] = useState([]);
+  const [articleData, isLoadingArticle] = useGetArticle();
   const { id } = useParams(); // Ambil ID artikel dari params navigasi
-  const article = articles.find(article => article.id === Number(id));
-
-  
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const response = await fetch('http://103.149.177.42:3333/articles');
-      console.log('response status:', response.status);
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      console.log('data fetched from API:', data.data.article);
-
-      if (data && Array.isArray(data.data.article)) {
-        setArticles(data.data.article);
-      } else {
-        console.log('Expected an array but got:', data.data.article);
-      }
-    }
-    
-    fetchArticles();
-  }, []);
+  const article = articleData.find(article => article.id === Number(id));
 
   if (!article) {
     return <p>Article not found.</p>;

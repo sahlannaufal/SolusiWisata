@@ -35,10 +35,11 @@ export const useGetArmada = () => {
     if(isError) {
         HandleNotifError(error)
     }
-    if (data && data.data[0]) {
-        data = data.data[0]
-    } else {
-        data = null
-    } 
-    return [data, isLoadingArmada]
+    const armadaData = data?.data?.rental ?? [];
+    // if (data && data.data[0]) {
+    //     data = data.data[0]
+    // } else {
+    //     data = null
+    // } 
+    return [armadaData, isLoadingArmada]
 }

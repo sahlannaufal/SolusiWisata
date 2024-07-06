@@ -37,11 +37,12 @@ export const useGetPaket = () => {
     if(isError) {
         HandleNotifError(error)
     }
-    if (data && data.data[0]) {
-        data = data.data[0]
-    } else {
-        data = null
-    } 
-    return [data, isLoadingPaket]
+    const paketData = data?.data?.paketPerjalanan ?? []
+    // if (data && data.data[0]) {
+    //     data = data.data[0]
+    // } else {
+    //     data = null
+    // } 
+    return [paketData, isLoadingPaket]
 }
 
