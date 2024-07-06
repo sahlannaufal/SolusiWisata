@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import ArticleForm from '@/component/article/ArticleForm';
 import ArmadaForm from '@/component/armada/ArmadaForm';
+import PaketForm from '@/component/paketTour/PaketForm';
 
 const AdminPage = async () => {
 
@@ -12,6 +13,7 @@ const AdminPage = async () => {
       </div>
       <ArticleForm/>
       <ArmadaForm/>
+      <PaketForm />
     </section>
   )
 }
