@@ -6,14 +6,6 @@ import { usePathname } from "next/navigation";
 import { Navbar as FlowbiteNavbar, Button, Dropdown } from "flowbite-react";
 import { getEmailUserFromLocalStorage, getNameUserFromLocalStorage, getTokenUserFromLocalStorage, removeEmailUserFromLocalStorage, removeNameUserFromLocalStorage, removeTokenUserFromLocalStorage } from '@/utils/TokenManager';
 
-const NavButton = ({ nama, href }) => {
-  return (
-    <Link href={href} className='flex align-middle p-2'>
-      {nama}
-    </Link>
-  );
-};
-
 function ItemNavbarGuest({isLogin}) {
   const router = useRouter();
   if (isLogin) {
@@ -21,7 +13,8 @@ function ItemNavbarGuest({isLogin}) {
   }
   return (
     <>
-    <Button href='/auth/login' className='bg-blue-700 my-2'>
+    <Button href='/auth/login' 
+    className='bg-blue-700 my-2'>
       Login
     </Button>
     </>
@@ -66,20 +59,28 @@ function Navbar() {
   }, [isLogin])
 
   return (
-    <div className='flex flex-row font-semibold align-middle bg-white justify-between py-2 bg-gradient-to-b from-blue-800 px-40 pb-20 pt-5'>
-      <div>
-        <img className='flex h-20' src="/logo_solusi.png" alt="logo" />
-      </div>
-      <div className='flex align-middle space-x-6 m-8 '>
-        <NavButton nama="Home" href="/" />
-        <NavButton nama="Paket Tour" href="/paket" />
-        <NavButton nama="Armada" href="/armada" />
-        <NavButton nama="Article" href="/article" />
-        <NavButton nama="Gallery" href="/gallery" />
+    <FlowbiteNavbar className='h-24'>
+      <FlowbiteNavbar.Brand 
+        href="/">
+        <img src="/logo_solusi.png" 
+        className="h-10 sm:h-9" 
+        alt="Solusi Wisata Logo" />
+      </FlowbiteNavbar.Brand>
+      <FlowbiteNavbar.Toggle />
+      <FlowbiteNavbar.Collapse className='items-center'>
+        <FlowbiteNavbar.Link href="/">
+          Home
+        </FlowbiteNavbar.Link>
+        <FlowbiteNavbar.Link href="/paket">
+          Paket
+        </FlowbiteNavbar.Link>
+        <FlowbiteNavbar.Link href="/armada">Armada</FlowbiteNavbar.Link>
+        <FlowbiteNavbar.Link href="/article">Article</FlowbiteNavbar.Link>
+        <FlowbiteNavbar.Link href="/gallery">Gallery</FlowbiteNavbar.Link>
         {isLogin ? <ItemNavbarAuth pathname={pathname} /> : <ItemNavbarGuest pathname={pathname} isLogin={isLogin} />}
+      </FlowbiteNavbar.Collapse>
+    </FlowbiteNavbar>
 
-      </div>
-    </div>
   );
 }
 

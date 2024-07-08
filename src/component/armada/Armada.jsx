@@ -1,16 +1,15 @@
 'use client'
 import CardArmada from '@/asset/card/CardArmada'
 import { useGetArmada } from '@/hooks/ArmadaHooks';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Armada() {
-
   const [armadaData, isLoadingArmada] = useGetArmada();
 
   return (
-    <div className='bg-blue-300 px-40 py-8 bg-opacity-20'>
-      <p className='font-bold text-4xl text-center pb-10'>Armada</p>
-      <div className='flex space-x-6 mb-10'>
+    <div className='bg-blue-300 px-4 md:px-20 lg:px-40 py-8 bg-opacity-20'>
+      <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Armada</p>
+      <div className='flex flex-wrap justify-center space-x-0 md:space-x-6 mb-10'>
         {isLoadingArmada ? (
           <p>Loading...</p>
         ) : armadaData ? (
@@ -25,4 +24,4 @@ function Armada() {
   )
 }
 
-export default Armada
+export default Armada;
