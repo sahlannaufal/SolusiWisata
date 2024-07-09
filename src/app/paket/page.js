@@ -11,7 +11,7 @@ export default function Pakets() {
     <Navbar />
     <div className='md:px-0 lg:px-40 mb-16'>
       <h1 className='text-4xl text-center font-bold mb-8'>Paket Tour</h1>
-      <div className='content-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center'>
+      <div className='flex flex-wrap space-x-4 space-y-4 justify-center'>
           { isLoadingPaket ? (
             <p>Loading...</p>
           ) : paketData ? (

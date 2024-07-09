@@ -1,6 +1,9 @@
 'use client'
 import CardArmada from '@/asset/card/CardArmada'
 import { useGetArmada } from '@/hooks/ArmadaHooks';
+import { Button, Card } from 'flowbite-react';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 function Armada() {
@@ -9,11 +12,11 @@ function Armada() {
   return (
     <div className='bg-blue-300 px-4 md:px-20 lg:px-40 py-8 bg-opacity-20'>
       <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Armada</p>
-      <div className='flex flex-wrap justify-center space-x-0 md:space-x-6 mb-10'>
+      <div className='flex flex-wrap justify-center space-x-4 md:space-x-6 mb-10'>
         {isLoadingArmada ? (
           <p>Loading...</p>
         ) : armadaData ? (
-          armadaData.map((item) => (
+          armadaData.slice(0,4).map((item) => (
             <CardArmada key={item.id} item={item} />
           ))
         ) : (

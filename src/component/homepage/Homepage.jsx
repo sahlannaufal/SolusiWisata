@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 function Homepage() {
   return (
-    <div className=' flex flex-row justify-center items-center pb-52 px-28 place-content-center m-20 space-x-4'>
+    <div className=' flex flex-col justify-center md:flex-row lg:flex-row justify-center items-center pb-52 px-28 place-content-center m-20 space-x-4'>
       <div className='pt-24 space-y-8 h-fit'>
         <div className=' space-y-4'>
-          <div className='font-bold '>
-            <p className='' style={{fontSize: 100}}>Nikmati liburanmu </p> 
+          <div className='font-bold text-2xl'>
+            <p className=''>Nikmati liburanmu </p> 
             <p>bersama </p>
             <p className='text-blue-700'> Solusi Wisata</p>
           </div>

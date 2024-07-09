@@ -16,28 +16,8 @@ function PaketTour() {
         { isLoadingPaket ? (
           <p>Loading...</p>
         ) : paketData ? (
-          paketData.map((item) => (
-            // <Card key={item.id} item={item}/>
-            <Cardd key={item.id}
-              className="max-w-xs"
-              renderImage={() => <Image width={500} height={500} src={`http://103.149.177.42:3333/${item.foto}`} alt="image 1" />}
-            >
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {item.destinasi}
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                {item.waktu}
-              </p>
-              <div className='flex justify-between'>
-                  <div>
-                    <p className='text-base font-medium'>Harga</p>
-                    <p><span className='font-bold'>{item.harga}</span><span className='text-sm'>/Orang</span></p>
-                  </div>
-                <Button as={Link} color="dark" href="https://wa.me/6282285639035" className=''>
-                  Pesan Sekarang
-                </Button>
-              </div>
-            </Cardd>
+          paketData.slice(0,3).map((item) => (
+            <Card key={item.id} item={item}/>
           ))
         ) : (
           <p>No data available</p>

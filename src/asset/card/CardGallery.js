@@ -1,25 +1,21 @@
+import Image from 'next/image'
 import React from 'react'
 
 function CardGallery({ item }) {
   return (
-    <div className='relative'>
-      <div className='space-y-6 flex flex-col items-center justify-center'>
-        <div className='h-80 w-80 overflow-hidden rounded-3xl flex items-center justify-center'>
-          {item && item.foto ? (
-            <img 
-              className='h-full w-full object-cover' 
-              src={`http://103.149.177.42:3333/${item.foto}`} 
-              alt="foto" 
+    
+    <div>
+            <Image
+            src={`http://103.149.177.42:3333/${item.foto}`}
+            alt="home"
+            height={300}
+            width={300}
+            className='rounded-lg'
             />
-          ) : (
-            <div className='h-full w-full flex items-center justify-center bg-gray-200'>
-              <p className='text-gray-500'>No Image</p>
-            </div>
-          )}
-        </div>
-        <p className='text-center font-medium text-2xl font-black'>{item?.judul_foto || 'No Title'}</p>
-      </div>
-    </div>
+            <h5 className="text-lg text-center font-bold tracking-tight text-gray-900 dark:text-white">
+            {item.judul_foto}
+          </h5>
+          </div>
   )
 }
 
