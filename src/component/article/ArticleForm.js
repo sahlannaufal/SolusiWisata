@@ -33,9 +33,7 @@ const ArticleForm = () => {
       formData.append('foto', foto);
     }
 
-    if (data == null) {
-      createArticle(formData);
-    }
+    createArticle(formData);
     setSubmitting(false);
   };
 

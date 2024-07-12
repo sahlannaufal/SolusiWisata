@@ -37,9 +37,8 @@ const PaketForm =() => {
         if (foto != null) {
             formData.append('foto', foto);
         }
-        if (data == null) {
-            createPaket(formData);
-        }
+        
+        createPaket(formData);
         setSubmitting(false);
     };
 

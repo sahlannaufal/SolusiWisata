@@ -36,9 +36,7 @@ const ArmadaForm = () => {
         if (foto != null) {
             formData.append('foto', foto);
         }
-        if (data == null) {
-            createArmada(formData)
-        }
+        createArmada(formData)
         setSubmitting(false);
     };
 

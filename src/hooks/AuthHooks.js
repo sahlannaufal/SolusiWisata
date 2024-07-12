@@ -16,7 +16,7 @@ export const useLogin = () => {
         },
         onSuccess:(result) => {
             const data = result.data
-            setNameUserInLocalStorage(data.user.username)
+            setNameUserInLocalStorage(data.user.name)
             setEmailUserInLocalStorage(data.user.email)
             setTokenUserInLocalStorage(data.token.token)
             router.push('/')

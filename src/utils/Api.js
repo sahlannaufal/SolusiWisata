@@ -3,7 +3,7 @@ import { getTokenUserFromLocalStorage, removeTokenUserFromLocalStorage } from ".
 
 
 const Api = axios.create({
-    baseURL: 'http://103.149.177.42:3333',
+    baseURL: 'http://127.0.0.1:3333',
     timeout: 600 * 1000,
     headers: {
         "Content-Type": "application/json",
@@ -14,6 +14,7 @@ const Api = axios.create({
 const onRequestSuccess = (config) => {
     const token = getTokenUserFromLocalStorage();
     if (token) config.headers.Authorization = `Bearer ${token}`;
+    console.log(token)
     return config;
 };
 

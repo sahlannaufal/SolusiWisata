@@ -10,7 +10,7 @@ export const useCreateArticle = () => {
             return createArticle(body);
         },
         mutationKey: ["createArticle"],
-        onSuccess: (e) => {
+        onSuccess: () => {
             Success("Berhasil Create Article")
         },
         onError: (error) => {
