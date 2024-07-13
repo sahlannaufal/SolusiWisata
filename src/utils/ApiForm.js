@@ -3,7 +3,7 @@ import { getTokenUserFromLocalStorage, removeTokenUserFromLocalStorage } from ".
 
 
 const ApiForm = axios.create({
-    baseURL: 'http://127.0.0.1:3333',
+    baseURL: 'http://103.149.177.42:3333',
     timeout: 600 * 1000,
     headers: {
         "Content-Type": "multipart/form-data",
