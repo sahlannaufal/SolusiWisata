@@ -9,9 +9,9 @@ export default function Articles() {
   return (
     <>
     <Navbar />
-    <div className='container mx-auto pb-8 md:px-0 lg:px-40'>
-      <h1 className='text-4xl text-center font-bold mb-8'>Armada</h1>
-      <div className='flex flex-wrap justify-center space-x-4 space-y-4 md:space-x-6 mb-10'>
+    <div className='flex flex-col items-center px-4 md:px-20 lg:px-40 py-8 bg-opacity-20'>
+      <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Armada</p>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-28 gap-y-4 justify-items-center'>
       {isLoadingArmada ? (
           <p>Loading...</p>
         ) : armadaData ? (

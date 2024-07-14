@@ -9,9 +9,11 @@ export default function Pakets() {
   return (
     <>
     <Navbar />
-    <div className='md:px-0 lg:px-40 mb-16'>
-      <h1 className='text-4xl text-center font-bold mb-8'>Paket Tour</h1>
-      <div className='flex flex-wrap space-x-4 space-y-4 justify-center'>
+    <div className=' grid px-4 md:px-20 lg:px-40 py-8 mb-10'>
+      <div>
+        <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Paket Tour</p>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 gap-y-4 justify-items-center'>
           { isLoadingPaket ? (
             <p>Loading...</p>
           ) : paketData ? (

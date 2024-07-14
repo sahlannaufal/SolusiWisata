@@ -12,7 +12,7 @@ function Card({ item }) {
       <div className='space-y-4 mx-4 my-4'>
         <div className='space-y-1'>
           <p className='font-bold text-xl leading-tight'>{item.judul}</p>
-          <p className='text-base text-gray-600'>{item.konten}</p>
+          <p className='text-base text-gray-600 line-clamp-3'>{item.konten}</p>
           <Link href={`/article/${item.id}`} className='font-medium text-base text-blue-700'>Read More</Link>
         </div>
       </div>
