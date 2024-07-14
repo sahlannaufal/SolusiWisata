@@ -142,7 +142,7 @@ function Navbar() {
         </div>
         <div className='hidden lg:flex lg:items-center lg:space-x-6'>
           <NavButton nama="Home" href="/" />
-          <NavButton nama="Paket Tour" href="/paketTour" />
+          <NavButton nama="Paket Tour" href="/paket" />
           <NavButton nama="Armada" href="/armada" />
           <NavButton nama="Gallery" href="/gallery" />
           <NavButton nama="Articles" href="/article" />
@@ -153,7 +153,7 @@ function Navbar() {
         <div className='block lg:hidden mt-4'>
           <div className='flex flex-col items-start'>
             <NavButton nama="Home" href="/" onClick={closeMenu} />
-            <NavButton nama="Paket Tour" href="/paketTour" onClick={closeMenu} />
+            <NavButton nama="Paket Tour" href="/paket" onClick={closeMenu} />
             <NavButton nama="Armada" href="/armada" onClick={closeMenu} />
             <NavButton nama="Gallery" href="/gallery" onClick={closeMenu} />
             <NavButton nama="Articles" href="/article" onClick={closeMenu} />

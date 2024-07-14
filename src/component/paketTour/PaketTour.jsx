@@ -12,7 +12,7 @@ function PaketTour() {
   return (
     <div className='flex flex-col content-center justify-center items-center px-8 md:px-20 lg:px-40 py-8'>
       <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Paket Tour & Travel</p>
-      <div className='flex flex-wrap space-x-4 space-y-4 justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 gap-y-4 justify-items-center'>
         { isLoadingPaket ? (
           <p>Loading...</p>
         ) : paketData ? (
@@ -22,6 +22,11 @@ function PaketTour() {
         ) : (
           <p>No data available</p>
         )}
+      </div>
+      <div className='pt-2'>
+      <Link href="/paket" className=' text-blue-900 font-medium rounded-lg' >
+        Paket Selengkapnya
+       </Link>      
       </div>
     </div>
   )
