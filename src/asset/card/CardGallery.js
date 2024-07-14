@@ -12,8 +12,8 @@ function CardGallery({ item }) {
             width={300}
             className='rounded-lg'
             />
-            <h5 className="text-lg text-center font-bold tracking-tight text-gray-900 dark:text-white">
-            {item.judul_foto}
+            <h5 className="text-lg text-center font-bold tracking-tight text-gray-900">
+            {item.judul}
           </h5>
           </div>
   )

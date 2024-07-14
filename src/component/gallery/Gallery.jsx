@@ -14,7 +14,7 @@ function Gallery() {
       <div>
         <p className='font-bold text-2xl md:text-3xl lg:text-4xl text-center pb-10'>Gallery</p>
       </div>
-      <div className='flex flex-wrap space-x-4 space-y-4 justify-center'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 justify-items-center'>
         {isLoadingArticle ? (
           <p>Loading...</p>
         ) : articleData ? (

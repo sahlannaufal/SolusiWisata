@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 function Homepage() {
   return (
-    <div className='flex flex-col justify-center md:flex-row lg:flex-row items-center lg:px-28 place-content-center lg:space-x-4'>
-      <div className='pt-2 space-y-8 h-fit'>
+    <div className='flex flex-col justify-center space-y-8 md:flex-row lg:flex-row lg:space-y-0 items-center lg:px-28 place-content-center lg:space-x-4'>
+      <div className='pt-2 space-y-8 h-fit '>
         <div className='space-y-4'>
           <div className='font-bold text-2xl'>
             <p>Nikmati liburanmu</p> 
