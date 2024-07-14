@@ -18,11 +18,11 @@ function Homepage() {
             melayani banyak wisatawan lokal maupun asing <br/> 
             dalam hal layanan tour di Sumatera Barat
           </p>
-          <Link href="https://wa.me/6282285639035" className=''>
-            <p className='inline-block px-4 py-2 bg-brown-600 text-white rounded-lg w-20 text-center'>
-              Contact
-            </p>
+          <div>
+          <Link href="https://wa.me/6282285639035" className='bg-slate-800 text-gray-100 px-4 py-3 rounded-lg' >
+            Contact
           </Link>
+          </div>
         </div>
       </div>
       <div className='flex flex-row items-center'>

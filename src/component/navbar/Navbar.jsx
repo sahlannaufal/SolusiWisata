@@ -56,7 +56,7 @@ function ItemNavbarAuth({pathname}) {
       <div>
         <button type="button" 
         onClick={toggleDropdown}
-        className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="options-menu">
+        className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2" id="options-menu">
           {name}
         </button>
       </div>
@@ -87,13 +87,22 @@ function ItemNavbarAuth({pathname}) {
 function Navbar() {
   const pathname = usePathname();
   const [isLogin, setIsLogin] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = getTokenUserFromLocalStorage();
     if (token) {
       setIsLogin(true);
     }
-  }, [isLogin])
+  }, [isLogin]);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
 
   return (
     // <FlowbiteNavbar className='h-24'>
@@ -118,19 +127,42 @@ function Navbar() {
     //   </FlowbiteNavbar.Collapse>
     // </FlowbiteNavbar>
 
-<div className='flex flex-row font-semibold align-middle bg-white justify-between py-2 bg-gradient-to-b from-blue-800 px-24 pt-5'>
-    <div className=''>
-      <img className='flex h-20' src="/logo_solusi.png" alt="logo"/>
+
+    <div className='bg-gradient-to-b from-blue-800 px-6 lg:px-40 pb-5 pt-5'>
+      <div className='flex justify-between items-center'>
+        <div>
+          <img className='h-20' src="/logo_solusi.png" alt="logo" />
+        </div>
+        <div className='lg:hidden'>
+          <button onClick={toggleMenu} className='text-white focus:outline-none'>
+            <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16'></path>
+            </svg>
+          </button>
+        </div>
+        <div className='hidden lg:flex lg:items-center lg:space-x-6'>
+          <NavButton nama="Home" href="/" />
+          <NavButton nama="Paket Tour" href="/paketTour" />
+          <NavButton nama="Armada" href="/armada" />
+          <NavButton nama="Gallery" href="/gallery" />
+          <NavButton nama="Articles" href="/article" />
+          {isLogin ? <ItemNavbarAuth pathname={pathname} /> : <ItemNavbarGuest isLogin={isLogin} />}
+        </div>
+      </div>
+      {menuOpen && (
+        <div className='block lg:hidden mt-4'>
+          <div className='flex flex-col items-start'>
+            <NavButton nama="Home" href="/" onClick={closeMenu} />
+            <NavButton nama="Paket Tour" href="/paketTour" onClick={closeMenu} />
+            <NavButton nama="Armada" href="/armada" onClick={closeMenu} />
+            <NavButton nama="Gallery" href="/gallery" onClick={closeMenu} />
+            <NavButton nama="Articles" href="/article" onClick={closeMenu} />
+            {isLogin ? <ItemNavbarAuth pathname={pathname} onClick={closeMenu} /> : <ItemNavbarGuest isLogin={isLogin} onClick={closeMenu} />}
+          </div>
+        </div>
+      )}
     </div>
-    <div className='flex align-middle space-x-6 m-8 '>
-      <NavButton nama="Home" href="/" />
-      <NavButton nama="Paket Tour" href="/paketTour" />
-      <NavButton nama="Armada" href="/armada" />
-      <NavButton nama="Gallery" href="/gallery" />
-      <NavButton nama="Articles" href="/article" />
-      {isLogin ? <ItemNavbarAuth pathname={pathname} /> : <ItemNavbarGuest pathname={pathname} isLogin={isLogin} />}
-    </div>
-    </div>
+
   );
 }
 
