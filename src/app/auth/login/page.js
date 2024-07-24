@@ -11,7 +11,7 @@ export default function Login() {
         <>
         <Navbar/>
         <div className="flex flex-col items-center p-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl text-blue-800 font-bold mb-4">
           Welcome Back!
         </h2>
        <FormLogin/>

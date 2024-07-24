@@ -23,7 +23,7 @@ function FormLogin() {
             validationSchema={LoginSchema}
             onSubmit={(value) => handleSubmit(value)}
             >
-                <Form className="flex  flex-col max-w-md gap-4 w-full flex-grow">
+                <Form className="flex  flex-col max-w-md gap-4 w-full flex-grow text-black">
                     <Field
                     name="email"
                     as={TextInput}
@@ -31,6 +31,7 @@ function FormLogin() {
                     type="email"
                     placeholder="Email"
                     required
+                    style={{ color: 'black' }}
                     />
                     <ErrorMessage
                     name="email"
@@ -47,6 +48,7 @@ function FormLogin() {
                     rightIcon={passwordVisible ? FaEyeSlash : FaEye}
                     onClick={togglePasswordVisibility}
                     as={TextInput}
+                    style={{ color: 'black' }}
                     />
                     <ErrorMessage 
                     name="password"
@@ -56,7 +58,7 @@ function FormLogin() {
                     <Button
                     type="submit"
                     disable={isPending}
-                    className="bg-slate-600 text-white w-full mx-auto"
+                    className="bg-blue-900 text-white w-full mx-auto"
                     >
                         Log In
                     </Button>

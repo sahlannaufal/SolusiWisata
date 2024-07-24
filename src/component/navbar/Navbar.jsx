@@ -131,7 +131,7 @@ function Navbar() {
     <div className='bg-gradient-to-b from-blue-800 px-6 lg:px-40 pb-5 pt-5'>
       <div className='flex justify-between items-center'>
         <div>
-          <img className='h-20' src="/logo_solusi.png" alt="logo" />
+          <img className='h-20' src="/logo_solusi.PNG" alt="logo" />
         </div>
         <div className='lg:hidden'>
           <button onClick={toggleMenu} className='text-white focus:outline-none'>
