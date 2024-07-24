@@ -1,9 +1,18 @@
+import DOMPurify from 'dompurify';
 import Link from 'next/link';
 import React from 'react';
-import { Button, Card as Cardd } from "flowbite-react";
-import Image from 'next/image';
+// import cleanHTML from 'cleanhtml';
+
 
 function Card({ item }) {
+
+  const cleanHTML = (dirtyHTML) => {
+    const clean = DOMPurify.sanitize(dirtyHTML, {
+      FORBID_ATTR:['style'],
+      FORBID_TAGS:['style'],
+    });
+  };
+
   return (
     <div className='w-96 rounded-3xl border-2'>
       <div className='relative h-80 overflow-hidden rounded-t-3xl'>
@@ -12,7 +21,7 @@ function Card({ item }) {
       <div className='space-y-4 mx-4 my-4'>
         <div className='space-y-1'>
           <p className='font-bold text-xl leading-tight'>{item.judul}</p>
-          <p className='text-base text-gray-600 line-clamp-3'>{item.konten}</p>
+          {/* <p className='text-base text-gray-600 line-clamp-3'> {cleanHTML(item.konten)} </p> */}
           <Link href={`/article/${item.id}`} className='font-medium text-base text-blue-700'>Read More</Link>
         </div>
       </div>

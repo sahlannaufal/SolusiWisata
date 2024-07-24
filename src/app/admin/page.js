@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
 import ArticleForm from '@/component/article/ArticleForm';
 import ArmadaForm from '@/component/armada/ArmadaForm';
 import PaketForm from '@/component/paketTour/PaketForm';
+import Tiptap from '@/component/Tiptap';
 
 const AdminPage = async () => {
 

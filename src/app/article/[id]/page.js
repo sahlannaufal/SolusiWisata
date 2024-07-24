@@ -28,7 +28,7 @@ export default function Article() {
             alt="Article Image" 
             className='mb-4 rounded-lg'
           />
-          <p>{article.konten}</p>
+          <p dangerouslySetInnerHTML={{__html: article.konten}}/>
         </article>
       </div>
     </div>

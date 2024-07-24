@@ -10,7 +10,7 @@ function Card({ item }) {
       </div>
       <div className='space-y-4 mx-4 my-4'>
         <div className='space-y-1'>
-          <p className='font-bold text-base leading-tight'>{item.destinasi}</p>
+          <p className='font-bold text-base leading-tight'>{item.nama}</p>
           <p className='text-sm text-gray-600'>{item.waktu}</p>
           <Link href={`/paket/${item.id}`} className='font-medium text-sm text-blue-700'>Read More</Link>
         </div>

@@ -1,6 +1,5 @@
 'use client'
 import { useCreateArmada, useGetArmada } from "@/hooks/ArmadaHooks";
-import { Button, FileInput, Label, TextInput } from "flowbite-react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 
@@ -46,113 +45,120 @@ const ArmadaForm = () => {
 
     return (
         <>
-        <div className="font-bold text-center pt-4 text-lg">
-            Armada Form
-        </div>
-        <Formik
-            enableReinitialize={true}
-            initialValues={{merk: merk, jenis: jenis, harga: harga, seat: seat, fitur: fitur, foto:null}}
-            onSubmit={handleSubmit}
-        >
-            {({ setFieldValue, isSubmitting}) => (
-                <Form className="grid gap-4 px-4 md:px-10" >
-                    <Label htmlFor="merk" value="merk" color={'#00384F'}/>
-                    <Field 
-                        name="merk"
-                        as={TextInput}
-                        id="merk"
-                        type="text"
-                        placeholder="Merk Armada"
-                        required
-                    />
-                    <ErrorMessage 
-                    name="merk"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <Label htmlFor="jenis" value="jenis" color={'#00384F'}/>
-                    <Field 
-                        name="jenis"
-                        as={TextInput}
-                        id="jenis"
-                        type="text"
-                        placeholder="Jenis Armada"
-                        required
-                    />
-                    <ErrorMessage 
-                    name="jenis"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <Label htmlFor="harga" value="harga" color={'#00384F'}/>
-                    <Field 
-                        name="harga"
-                        as={TextInput}
-                        id="harga"
-                        type="text"
-                        placeholder="harga Armada"
-                        required
-                    />
-                    <ErrorMessage 
-                    name="harga"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <Label htmlFor="seat" value="seat" color={'#00384F'}/>
-                    <Field 
-                        name="seat"
-                        as={TextInput}
-                        id="seat"
-                        type="text"
-                        placeholder="seat Armada"
-                        required
-                    />
-                    <ErrorMessage 
-                    name="seat"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <Label htmlFor="fitur" value="fitur" color={'#00384F'}/>
-                    <Field 
-                        name="fitur"
-                        as={TextInput}
-                        id="fitur"
-                        type="text"
-                        placeholder="fitur Armada"
-                        required
-                    />
-                    <ErrorMessage 
-                    name="fitur"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <Label htmlFor="foto" value="Foto Armada" color={'#00384F'}/>
-                    <FileInput 
-                        id="foto"
-                        onChange={
-                            e => {
+            <div className="font-bold text-center pt-4 text-lg">
+                Armada Form
+            </div>
+            <Formik
+                enableReinitialize={true}
+                initialValues={{ merk: merk, jenis: jenis, harga: harga, seat: seat, fitur: fitur, foto: null }}
+                onSubmit={handleSubmit}
+            >
+                {({ setFieldValue, isSubmitting }) => (
+                    <Form className="grid gap-4 px-4 md:px-10">
+                        <label htmlFor="merk" className='text-sm font-medium text-gray-700'>Merk</label>
+                        <Field 
+                            name="merk"
+                            type="text"
+                            placeholder="Merk Armada"
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        />
+                        <ErrorMessage 
+                            name="merk"
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <label htmlFor="jenis" className='text-sm font-medium text-gray-700'>Jenis</label>
+                        <Field 
+                            name="jenis"
+                            type="text"
+                            placeholder="Jenis Armada"
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        />
+                        <ErrorMessage 
+                            name="jenis"
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <label htmlFor="harga" className='text-sm font-medium text-gray-700'>Harga</label>
+                        <Field 
+                            name="harga"
+                            type="text"
+                            placeholder="Harga Armada"
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        />
+                        <ErrorMessage 
+                            name="harga"
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <label htmlFor="seat" className='text-sm font-medium text-gray-700'>Seat</label>
+                        <Field 
+                            name="seat"
+                            type="text"
+                            placeholder="Seat Armada"
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        />
+                        <ErrorMessage 
+                            name="seat"
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <label htmlFor="fitur" className='text-sm font-medium text-gray-700'>Fitur</label>
+                        <Field 
+                            name="fitur"
+                            type="text"
+                            placeholder="Fitur Armada"
+                            required
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        />
+                        <ErrorMessage 
+                            name="fitur"
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <label htmlFor="foto" className='text-sm font-medium text-gray-700'>Foto Armada</label>
+                        <input
+                            id='foto'
+                            name='foto'
+                            type='file'
+                            onChange={e => {
                                 setFieldValue("foto", e.currentTarget.files[0]);
                                 setFoto(e.currentTarget.files[0]);
-                            }
-                        }
-                    />
-                    <ErrorMessage 
-                    name="foto"
-                    component="div"
-                    className='text-red-500 text-sm'
-                    />
-                    <div className="flex justify-end">
-                        <Button
-                            type="submit"
-                            disabled={isPendingCreate || isSubmitting}
-                            className="bg-blue-700 text-white w-full md:max-w-20"
-                        >
-                            Submit
-                        </Button>
-                    </div>
-                </Form>
-            )}
-        </Formik>
+                            }}
+                            className="mt-1 block w-full text-sm text-gray-500
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-full file:border-0
+                                file:text-sm file:font-semibold
+                                file:bg-blue-50 file:text-blue-700
+                                hover:file:bg-blue-100"
+                        />
+                        <ErrorMessage 
+                            name='foto'
+                            component="div"
+                            className='text-red-500 text-sm'
+                        />
+                        
+                        <div className="flex justify-end">
+                            <button
+                                type="submit"
+                                disabled={isPendingCreate || isSubmitting}
+                                className="bg-blue-700 text-white w-full md:max-w-20 px-4 py-2 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
         </>
     );
 };

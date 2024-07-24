@@ -20,8 +20,8 @@ export default function Paket() {
     <div className='container mx-auto py-8 px-4 md:px-0'>
       <div className='max-w-3xl mx-auto'>
         <header className='mb-8'>
-          <h1 className='text-4xl font-bold mb-2'>{paket.destinasi}</h1>
-          <p className='text-gray-600 text-sm'>By {paket.harga}</p>
+          <h1 className='text-4xl font-bold mb-2'>{paket.nama}</h1>
+          {/* <p className='text-gray-600 text-sm'>By {paket.harga}</p> */}
         </header>
         <article className='prose prose-lg'>
           <img 
@@ -29,7 +29,7 @@ export default function Paket() {
             alt="Paket Image" 
             className='mb-4 rounded-lg'
           />
-          <p>{paket.deskripsi}</p>
+          <p dangerouslySetInnerHTML={{__html: paket.deskripsi}}/>
         </article>
       </div>
     </div>
